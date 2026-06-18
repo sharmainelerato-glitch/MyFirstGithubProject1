@@ -29,6 +29,13 @@ header {
   padding: 20px;
   width: 75%;
   border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  background-color: #f0ebff;
+  box-shadow: 0 0 0 3px rgba(136, 93, 241, 0.1);
 }
 
 .search-button {
@@ -40,6 +47,17 @@ header {
   padding: 20px;
   line-height: 1;
   border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #7a4fd9;
+  box-shadow: 0 5px 15px rgba(136, 93, 241, 0.3);
+}
+
+.search-button:active {
+  transform: scale(0.98);
 }
 
 main {
@@ -48,11 +66,14 @@ main {
 
 .current-temperature {
   font-size: 48px;
+  display: flex;
+  align-items: center;
 }
 
 .current-weather {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .current-city {
@@ -74,8 +95,9 @@ main {
 .current-temperature-icon {
   position: relative;
   top: -8px;
-  font-size: 40px;
+  font-size: 80px;
   margin-right: 10px;
+  display: inline-block;
 }
 
 .current-temperature-value {
@@ -93,6 +115,83 @@ footer {
   border-top: 1px solid #f9f7fe;
   text-align: center;
   padding-top: 15px;
-
   color: rgba(39, 33, 66, 0.4);
+  font-size: 14px;
+}
+
+footer a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #7a4fd9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .weather-app {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .search-input {
+    width: calc(100% - 120px);
+  }
+
+  .current-city {
+    font-size: 28px;
+  }
+
+  .current-weather {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .current-temperature {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-app {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  header {
+    padding-bottom: 15px;
+  }
+
+  .search-input {
+    padding: 12px;
+    font-size: 14px;
+    width: calc(100% - 100px);
+  }
+
+  .search-button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .current-city {
+    font-size: 24px;
+  }
+
+  .current-details {
+    font-size: 14px;
+  }
+
+  .current-temperature-value {
+    font-size: 60px;
+  }
+
+  .current-temperature-unit {
+    font-size: 20px;
+    top: -28px;
+  }
+
+  .current-temperature-icon {
+    font-size: 60px;
+  }
 }
